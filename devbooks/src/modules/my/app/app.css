@@ -1,38 +1,89 @@
-.center {
+.navbar-custom {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+header {
     text-align: center;
+    padding: 20px;
+    background-color: rgba(59, 147, 224, 0.103);
+    margin-bottom: 15px;
 }
-.link {
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
+
+footer {
+    margin-top: 40px;
+    font-family: 'IBM Plex Mono', monospace;
+    text-align: center;
+    font-size: 12px;
+    background-color: rgba(59, 147, 224, 0.103);
+}
+
+.title {
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: -1px;
+    font-size: 35px;
+    color: #333333;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+.subtitle {
+    font-size: 20px;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.lwc-footer {
+    font-weight: bold;
+    color: #02a0e0;
     text-decoration: none;
-    background-color: #ff6000;
-    color: white;
-    margin-left: 33%;
-    margin-right: 33%;
-    display: inline-block;
-    margin-top: 1em;
-}
-.info {
-    color: black;
-    background-color: #e4f2f8;
-    margin: auto;
-    padding: 15px 10px;
-    text-align: left;
-    width: 300px;
-    border-radius: 5px;
-}
-.code {
-    font-family: monospace;
-}
-.container {
-    margin-top: 30px;
 }
 
-img {
-    max-width: 150px;
+.logo {
+    margin: 0;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: -1px;
 }
 
-.greeting {
-    height: 75px;
+.menu-button {
+    margin: 0;
+    font-size: 20px;
+    font-family: 'IBM Plex Mono', monospace;
+    cursor: pointer;
+}
+
+.right {
+    text-align: right;
+}
+
+.submenu {
+    border-top: 1px solid rgb(243, 240, 240);
+    border-bottom: 1px solid rgb(243, 240, 240);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+.menu-item {
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.card-custom {
+    border: 1px solid rgb(207, 203, 203);
+    box-shadow: 1px 15px 46px -10px rgba(0,0,0,0.39);
+    height: 250px;
+    width: 157px;
+    margin-bottom: 15px;
+}
+
+.card-custom img {
+    height: 250px;
+    width: 157px;
+}
+
+.image-card {
+    object-fit: cover;
 }

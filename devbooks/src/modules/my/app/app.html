@@ -1,25 +1,41 @@
 <template>
-    <!-- LWC sample component <my-greeting> -->
-    <div class="center greeting">
-        <!-- <my-greeting speed="slow"></my-greeting> -->
-        <my-greeting speed="medium"></my-greeting>
-        <!-- <my-greeting speed="fast"></my-greeting> -->
-    </div>
-
-    <div class="center">
-        <img src="/resources/lwc.png" />
-    </div>
-
-    <!-- Page code -->
-    <div class="center">
-        <div class="container">
-            <p class="info">
-                Edit <strong class="code">src/modules/my/app/app.html</strong>
-                <br />and save for live reload.
-            </p>
+    <nav class="container navbar-custom">
+        <div class="row">
+            <div class="col-6">
+                <span class="logo">devbooks</span>
+            </div>
+            <div class="col-6 right" onclick={handleClicMenu}>
+                <span class="menu-button">+Menu</span>
+            </div>
         </div>
-        <div>
-            <a href="https://lwc.dev" class="link" target="_blank">Learn LWC</a>
+    </nav>
+
+    <template if:true={mostrarMenu}>
+        <div class="container submenu">
+            <a class="menu-item" href="google.es">Add book</a>
+            <a class="menu-item" href="google.com">Author</a>
         </div>
-    </div>
+    </template>
+
+    <header class="container">
+        <h1 class="title">Best books for web development</h1>
+        <h2 class="subtitle">Learn the modern way 🚀</h2>
+    </header>
+
+    <section class="container">
+        <h5>Top books</h5>
+        <div class="row">
+            <template for:each={books} for:item="book">
+                <div key={book.id} class="col-6 col-md-4 col-lg-3">
+                    <div class="card-custom">
+                        <img class="image-card" src={book.imageUrl} alt={book.title}>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </section>
+
+    <footer>
+        <h6>Made with <a class="lwc-footer" href="https://lwc.dev/">LWC</a></h6>
+    </footer>
 </template>
