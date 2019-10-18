@@ -1,0 +1,18 @@
+<template>
+    <section class="container">
+        <h5>What book do you propose? 🤔</h5>
+        <div class="p-1">
+            <form class="mt-3" onsubmit={handleSubmitAddBook}>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Book name</label>
+                    <input value={nombreLibro} oninput={handleNombreLibro} type="text" class="form-control" placeholder="i.e. JavaScript for Beginners"/>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">URL</label>
+                    <input value={urlLibro} oninput={handleUrlLibro} type="text" class="form-control" placeholder="i.e. amazon.com/books/js/jsforbegin"/>
+                </div>
+                <button class="btn btn-success">Send my book!</button>
+            </form>
+        </div>
+    </section>
+</template>

@@ -4,7 +4,7 @@
     <nav class="container navbar-custom">
         <div class="row">
             <div class="col-6">
-                <span class="logo">devbooks</span>
+                <span onclick={handleClicLogo} class="logo">devbooks</span>
             </div>
             <div class="col-6 right" onclick={handleClicMenu}>
                 <span class="menu-button">+Menu</span>
@@ -14,8 +14,7 @@
 
     <template if:true={mostrarMenu}>
         <div class="container submenu">
-            <a class="menu-item" href="google.es">Add book</a>
-            <a class="menu-item" href="google.com">Author</a>
+            <a onclick={handleNav} class="menu-item" href="javascript:void(0)">Add a Book</a>
         </div>
     </template>
 
@@ -25,32 +24,42 @@
     </header>
     <!-- // Navbar y header -->
 
-    <!-- Página 1 -->
-    <section class="container search-div">
-        <h5>Search for a book</h5>
-        <input value={valorInput} oninput={handleSearch} type="text" name="search" class="search" placeholder="JavaScript, Python">
-        <template if:true={mostrarBotonEliminarTexto}>
-            <span onclick={handleResetInput} class="delete-button">X</span>
-        </template>
-    </section>
-
-    <section class="container">
-        <h5>Top 10 developments books</h5>
-        <div class="row">
-            <template for:each={books} for:item="book">
-                <div key={book.id} class="col-6 col-md-4 col-lg-3">
-                    <div class="card-custom">
-                        <img class="image-card" src={book.imageUrl} alt={book.title}>
-                    </div>
-                </div>
+    <!-- Home / Página 1 -->
+    <template if:true={mostrarPaginaHome}>
+        <section class="container search-div">
+            <h5>Search for a book</h5>
+            <input value={valorInput} oninput={handleSearch} type="text" name="search" class="search" placeholder="JavaScript, Python">
+            <template if:true={mostrarBotonEliminarTexto}>
+                <span onclick={handleResetInput} class="delete-button">X</span>
             </template>
-        </div>
-    </section>
+        </section>
 
-    <!-- // Página 1 -->
+        <section class="container">
+            <h5>Top 10 developments books</h5>
+            <div class="row">
+                <template for:each={books} for:item="book">
+                    <div key={book.id} class="col-6 col-md-4 col-lg-3">
+                        <div class="card-custom">
+                            <img class="image-card" src={book.imageUrl} alt={book.title}>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </section>
+    </template>
 
+    <!-- // Home / Página 1 -->
+
+    <!-- Add a Book / Página 2 -->
+    <template if:true={mostrarPaginaAddABook}>
+        <my-add-a-book></my-add-a-book>
+    </template>
+    <!-- // Add a Book / Página 2 -->
+
+    <!-- Footer y disclaimer -->
     <footer class="container text-center">
         <h6>Made with <a class="lwc-footer" href="https://lwc.dev/">LWC</a></h6>
         <span>By Andreas RO</span>
     </footer>
+    <!-- // Footer y disclaimer -->
 </template>
