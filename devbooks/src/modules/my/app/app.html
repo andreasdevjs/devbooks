@@ -22,8 +22,14 @@
         <h2 class="subtitle">Learn the modern way 🚀</h2>
     </header>
 
+    <section class="container search-div">
+        <h5>Search for a book</h5>
+        <input type="text" name="search" class="search" placeholder="JavaScript, Python">
+        <span class="delete-button">X</span>
+    </section>
+
     <section class="container">
-        <h5>Top books</h5>
+        <h5>Top 10 developments books</h5>
         <div class="row">
             <template for:each={books} for:item="book">
                 <div key={book.id} class="col-6 col-md-4 col-lg-3">
@@ -35,7 +41,8 @@
         </div>
     </section>
 
-    <footer>
+    <footer class="container text-center">
         <h6>Made with <a class="lwc-footer" href="https://lwc.dev/">LWC</a></h6>
+        <span>By Andreas RO</span>
     </footer>
 </template>

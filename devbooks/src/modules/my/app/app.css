@@ -16,12 +16,13 @@ footer {
     text-align: center;
     font-size: 12px;
     background-color: rgba(59, 147, 224, 0.103);
+    padding: 10px;
 }
 
 .title {
     font-family: 'IBM Plex Mono', monospace;
     letter-spacing: -1px;
-    font-size: 35px;
+    font-size: 25px;
     color: #333333;
     font-weight: 700;
     margin-bottom: 15px;
@@ -29,7 +30,7 @@ footer {
 }
 
 .subtitle {
-    font-size: 20px;
+    font-size: 15px;
     font-family: 'IBM Plex Mono', monospace;
 }
 
@@ -86,4 +87,47 @@ footer {
 
 .image-card {
     object-fit: cover;
+}
+
+
+.search {
+    border: 1px solid #dddbda;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 4px;
+}
+
+.search:focus {
+        outline: 0;
+    border-color: #1589ee;
+    background-color: #fff;
+    box-shadow: 0 0 3px #0070D2;
+}
+
+.search-div {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.delete-button {
+    border: 1px solid rgb(224, 217, 217);
+    border-radius: 50%;
+    padding: 1px 6px;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    top: 42px;
+    right: 25px;
+    background-color: rgba(59, 147, 224, 0.103);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+h6 {
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
 }
