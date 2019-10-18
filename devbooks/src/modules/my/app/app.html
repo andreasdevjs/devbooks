@@ -1,4 +1,6 @@
 <template>
+
+    <!-- Navbar y header -->
     <nav class="container navbar-custom">
         <div class="row">
             <div class="col-6">
@@ -21,11 +23,15 @@
         <h1 class="title">Best books for web development</h1>
         <h2 class="subtitle">Learn the modern way 🚀</h2>
     </header>
+    <!-- // Navbar y header -->
 
+    <!-- Página 1 -->
     <section class="container search-div">
         <h5>Search for a book</h5>
-        <input type="text" name="search" class="search" placeholder="JavaScript, Python">
-        <span class="delete-button">X</span>
+        <input value={valorInput} oninput={handleSearch} type="text" name="search" class="search" placeholder="JavaScript, Python">
+        <template if:true={mostrarBotonEliminarTexto}>
+            <span onclick={handleResetInput} class="delete-button">X</span>
+        </template>
     </section>
 
     <section class="container">
@@ -40,6 +46,8 @@
             </template>
         </div>
     </section>
+
+    <!-- // Página 1 -->
 
     <footer class="container text-center">
         <h6>Made with <a class="lwc-footer" href="https://lwc.dev/">LWC</a></h6>

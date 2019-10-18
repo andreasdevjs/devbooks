@@ -7,7 +7,13 @@ export default class App extends LightningElementWithSLDS {
     mostrarMenu = false;
 
     @track
+    mostrarBotonEliminarTexto = false;
+
+    @track
     books = [];
+
+    @track
+    valorInput = '';
 
     // Abre y cierra el menú
     handleClicMenu() {
@@ -15,6 +21,25 @@ export default class App extends LightningElementWithSLDS {
         const menu = this.template.querySelector('.menu-button');
         this.mostrarMenu ? menu.innerText = '-Menu' : menu.innerText = '+Menu'
     }
+
+    // Gestiona la búsqueda en el input
+    handleSearch(event) {
+        const searchText = event.target.value;
+        if(searchText.length > 2) {
+            this.mostrarBotonEliminarTexto = true;
+        } else {
+            this.mostrarBotonEliminarTexto = false;
+        }
+
+        this.valorInput = searchText;
+    }
+
+    // Gestiona el clic en el botón X que aparece en el input
+    handleResetInput(event) {
+        this.valorInput = '';
+        this.mostrarBotonEliminarTexto = false;
+    }
+
 
 
     connectedCallback() {
