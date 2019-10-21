@@ -4,7 +4,7 @@
     <nav class="container navbar-custom">
         <div class="row">
             <div class="col-6">
-                <span onclick={handleClicLogo} class="logo">devbooks</span>
+                <span onclick={handleClicLogo} class="logo">[devbooks]</span>
             </div>
             <div class="col-6 right" onclick={handleClicMenu}>
                 <span class="menu-button">+Menu</span>
@@ -28,7 +28,7 @@
     <template if:true={mostrarPaginaHome}>
         <section class="container search-div">
             <h5>Search for a book</h5>
-            <input value={valorInput} oninput={handleSearch} type="text" name="search" class="search" placeholder="JavaScript, Python">
+            <input value={valorInput} oninput={handleSearch} type="text" name="search" class="search" placeholder="i.e. JavaScript, Python">
             <template if:true={mostrarBotonEliminarTexto}>
                 <span onclick={handleResetInput} class="delete-button">X</span>
             </template>
@@ -47,7 +47,7 @@
             </div>
         </section>
     </template>
-
+    
     <!-- // Home / Página 1 -->
 
     <!-- Add a Book / Página 2 -->

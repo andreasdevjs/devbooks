@@ -3,6 +3,7 @@ import { books } from '../../../resources/assets/js/books';
 import { api, track } from 'lwc';
 
 export default class App extends LightningElementWithSLDS {
+    
     @track
     mostrarMenu = false;
 
@@ -16,10 +17,10 @@ export default class App extends LightningElementWithSLDS {
     valorInput = '';
 
     @track
-   mostrarPaginaHome = true;
+    mostrarPaginaHome = true;
 
-   @track
-   mostrarPaginaAddABook = false; 
+    @track
+    mostrarPaginaAddABook = false; 
 
    
 
