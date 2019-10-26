@@ -30,22 +30,52 @@
             <h5>Search for a book</h5>
             <input value={valorInput} oninput={handleSearch} type="text" name="search" class="search" placeholder="i.e. JavaScript, Python">
             <template if:true={mostrarBotonEliminarTexto}>
-                <span onclick={handleResetInput} class="delete-button">X</span>
+                <div onclick={handleResetInput} class="delete-button">
+                    <div class="close icon"></div>
+                </div>
             </template>
         </section>
 
+        <template if:true={searchResults}>
+            <section class="container">
+                <h5>{numberBooksMatch} books found 👏</h5>
+                <div class="row">
+                    <template for:each={resultsBooks} for:item="book">
+                        <div key={book.id} class="col-6 col-md-3 col-lg-2 padding-book">
+                            <div class="card-custom">
+                                <img 
+                                    class="image-card" 
+                                    src={book.imageUrl}
+                                    data-url={book.urlAfiliatte} 
+                                    alt={book.title} 
+                                    onclick={handleClicLibro}
+                                >
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </section>
+        </template>
+
         <section class="container">
-            <h5>Top 10 developments books</h5>
+            <h5>Top developments books</h5>
             <div class="row">
                 <template for:each={books} for:item="book">
-                    <div key={book.id} class="col-6 col-md-4 col-lg-3">
+                    <div key={book.id} class="col-6 col-md-3 col-lg-2 padding-book">
                         <div class="card-custom">
-                            <img class="image-card" src={book.imageUrl} alt={book.title}>
+                            <img 
+                                class="image-card" 
+                                src={book.imageUrl}
+                                data-url={book.urlAfiliatte} 
+                                alt={book.title} 
+                                onclick={handleClicLibro}
+                            >
                         </div>
                     </div>
                 </template>
             </div>
         </section>
+
     </template>
     
     <!-- // Home / Página 1 -->

@@ -74,22 +74,25 @@ footer {
 }
 
 .card-custom {
-    border: 1px solid rgb(207, 203, 203);
-    box-shadow: 1px 15px 46px -10px rgba(0,0,0,0.39);
-    height: 250px;
-    width: 157px;
+    border: 10px solid rgba(59, 147, 224, 0.103);
+    border-radius: 4px;
+    height: 100%;
+    width: 100%;
     margin-bottom: 15px;
 }
 
 .card-custom img {
-    height: 250px;
-    width: 157px;
+    height: 100%;
+    width: 100%;
 }
 
 .image-card {
     object-fit: cover;
 }
 
+.padding-book {
+    padding-bottom: 30px;
+}
 
 .search {
     border: 1px solid #dddbda;
@@ -100,10 +103,10 @@ footer {
 }
 
 .search:focus {
-        outline: 0;
+    outline: 0;
     border-color: #1589ee;
     background-color: #fff;
-    box-shadow: 0 0 3px #0070D2;
+    box-shadow: 0 0 3px #0070d2;
 }
 
 .search-div {
@@ -112,14 +115,12 @@ footer {
 }
 
 .delete-button {
-    border: 1px solid rgb(224, 217, 217);
-    border-radius: 50%;
     padding: 1px 6px;
     font-size: 12px;
     font-weight: bold;
     position: absolute;
     top: 42px;
-    right: 25px;
+    right: 45px;
     background-color: rgba(59, 147, 224, 0.103);
     color: rgb(0, 0, 0);
     cursor: pointer;
@@ -132,3 +133,35 @@ h6 {
 h2 {
     margin: 0;
 }
+
+.close.icon {
+    color: #000;
+    position: absolute;
+    margin-top: 0;
+    margin-left: 0;
+    width: 21px;
+    height: 21px;
+}
+
+.close.icon:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 21px;
+    height: 2px;
+    background-color: currentColor;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.close.icon:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 21px;
+    height: 2px;
+    background-color: currentColor;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+

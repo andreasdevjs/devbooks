@@ -1,6 +1,8 @@
 import LightningElementWithSLDS from '../lightningElementWithSLDS/lightningElementWithSLDS';
 import { books } from '../../../resources/assets/js/books';
-import { api, track } from 'lwc';
+import { track } from 'lwc';
+
+const API_BOOKS = 'https://api.myjson.com/bins/gbbug';
 
 export default class App extends LightningElementWithSLDS {
     
@@ -20,7 +22,19 @@ export default class App extends LightningElementWithSLDS {
     mostrarPaginaHome = true;
 
     @track
-    mostrarPaginaAddABook = false; 
+    mostrarPaginaAddABook = false;
+    
+    @track
+    allBooks = [];
+
+    @track 
+    resultsBooks = [];
+
+    @track
+    searchResults = false;
+
+    @track
+    numberBooksMatch = 0;
 
    
 
@@ -52,25 +66,60 @@ export default class App extends LightningElementWithSLDS {
     // Gestiona la búsqueda en el input
     handleSearch(event) {
         const searchText = event.target.value;
+        this.valorInput = searchText;
         if(searchText.length > 2) {
             this.mostrarBotonEliminarTexto = true;
+            const matches = this.allBooks.filter((book) => {
+                return book.longTitle.toLowerCase().includes(searchText.toLowerCase()); 
+            });
+            const resultsLength = matches.length;
+            this.resultsBooks = matches;
+            console.log(matches.length)
+            if(resultsLength == 0) {
+                this.searchResults = false;
+                this.numberBooksMatch = 0;
+            }
+            else if(resultsLength > 0) {
+                this.searchResults = true;
+                this.numberBooksMatch = resultsLength;
+            }
         } else {
             this.mostrarBotonEliminarTexto = false;
+            this.searchResults = false;
+            this.numberBooksMatch = 0;
         }
-
-        this.valorInput = searchText;
     }
 
     // Gestiona el clic en el botón X que aparece en el input
-    handleResetInput(event) {
+    handleResetInput() {
         this.valorInput = '';
+        this.searchResults = false;
+        this.resultsBooks = [];
         this.mostrarBotonEliminarTexto = false;
     }
 
+    // Gestiona el clic en el libro que envía a otra web
+    handleClicLibro(event) {
+        const urlLibro = event.target.getAttribute('data-url');
+        console.log(urlLibro)
+        window.open(`${urlLibro}`, '_blank');
+    }
+
+    // Función que nos trae los libros de la api (Versión 1.0)
+    async getAllBooks() {
+        try {
+            const response = await fetch(API_BOOKS);
+            const books = await response.json();
+            this.allBooks = books;
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
 
     connectedCallback() {
         this.books = books;
+        this.getAllBooks();
     }
 
 
