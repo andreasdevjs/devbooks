@@ -1,38 +1,167 @@
-.center {
+.navbar-custom {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+header {
     text-align: center;
+    padding: 20px;
+    background-color: rgba(59, 147, 224, 0.103);
+    margin-bottom: 15px;
 }
-.link {
-    border: none;
+
+footer {
+    margin-top: 40px;
+    font-family: 'IBM Plex Mono', monospace;
+    text-align: center;
+    font-size: 12px;
+    background-color: rgba(59, 147, 224, 0.103);
     padding: 10px;
-    border-radius: 5px;
+}
+
+.title {
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: -1px;
+    font-size: 25px;
+    color: #333333;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+.subtitle {
+    font-size: 15px;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.lwc-footer {
+    font-weight: bold;
+    color: #02a0e0;
     text-decoration: none;
-    background-color: #ff6000;
-    color: white;
-    margin-left: 33%;
-    margin-right: 33%;
-    display: inline-block;
-    margin-top: 1em;
-}
-.info {
-    color: black;
-    background-color: #e4f2f8;
-    margin: auto;
-    padding: 15px 10px;
-    text-align: left;
-    width: 300px;
-    border-radius: 5px;
-}
-.code {
-    font-family: monospace;
-}
-.container {
-    margin-top: 30px;
 }
 
-img {
-    max-width: 150px;
+.logo {
+    margin: 0;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: -1px;
+    cursor: pointer;
 }
 
-.greeting {
-    height: 75px;
+.menu-button {
+    margin: 0;
+    font-size: 20px;
+    font-family: 'IBM Plex Mono', monospace;
+    cursor: pointer;
 }
+
+.right {
+    text-align: right;
+}
+
+.submenu {
+    border-top: 1px solid rgb(243, 240, 240);
+    border-bottom: 1px solid rgb(243, 240, 240);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+.menu-item {
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.card-custom {
+    border: 10px solid rgba(59, 147, 224, 0.103);
+    border-radius: 4px;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.card-custom img {
+    height: 100%;
+    width: 100%;
+}
+
+.image-card {
+    object-fit: cover;
+}
+
+.padding-book {
+    padding-bottom: 30px;
+}
+
+.search {
+    border: 1px solid #dddbda;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 4px;
+}
+
+.search:focus {
+    outline: 0;
+    border-color: #1589ee;
+    background-color: #fff;
+    box-shadow: 0 0 3px #0070d2;
+}
+
+.search-div {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.delete-button {
+    padding: 1px 6px;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    top: 42px;
+    right: 45px;
+    background-color: rgba(59, 147, 224, 0.103);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+h6 {
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+}
+
+.close.icon {
+    color: #000;
+    position: absolute;
+    margin-top: 0;
+    margin-left: 0;
+    width: 21px;
+    height: 21px;
+}
+
+.close.icon:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 21px;
+    height: 2px;
+    background-color: currentColor;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.close.icon:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 21px;
+    height: 2px;
+    background-color: currentColor;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+

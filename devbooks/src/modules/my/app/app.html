@@ -1,25 +1,95 @@
 <template>
-    <!-- LWC sample component <my-greeting> -->
-    <div class="center greeting">
-        <!-- <my-greeting speed="slow"></my-greeting> -->
-        <my-greeting speed="medium"></my-greeting>
-        <!-- <my-greeting speed="fast"></my-greeting> -->
-    </div>
 
-    <div class="center">
-        <img src="/resources/lwc.png" />
-    </div>
+    <!-- Navbar y header -->
+    <nav class="container navbar-custom">
+        <div class="row">
+            <div class="col-6">
+                <span onclick={handleClicLogo} class="logo">[devbooks]</span>
+            </div>
+            <div class="col-6 right" onclick={handleClicMenu}>
+                <span class="menu-button">+Menu</span>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Page code -->
-    <div class="center">
-        <div class="container">
-            <p class="info">
-                Edit <strong class="code">src/modules/my/app/app.html</strong>
-                <br />and save for live reload.
-            </p>
+    <template if:true={mostrarMenu}>
+        <div class="container submenu">
+            <a onclick={handleNav} class="menu-item" href="javascript:void(0)">Add a Book</a>
         </div>
-        <div>
-            <a href="https://lwc.dev" class="link" target="_blank">Learn LWC</a>
-        </div>
-    </div>
+    </template>
+
+    <header class="container">
+        <h1 class="title">Best books for web development</h1>
+        <h2 class="subtitle">Learn the modern way 🚀</h2>
+    </header>
+    <!-- // Navbar y header -->
+
+    <!-- Home / Página 1 -->
+    <template if:true={mostrarPaginaHome}>
+        <section class="container search-div">
+            <h5>Search for a book</h5>
+            <input value={valorInput} oninput={handleSearch} type="text" name="search" class="search" placeholder="i.e. JavaScript, Python">
+            <template if:true={mostrarBotonEliminarTexto}>
+                <div onclick={handleResetInput} class="delete-button">
+                    <div class="close icon"></div>
+                </div>
+            </template>
+        </section>
+
+        <template if:true={searchResults}>
+            <section class="container">
+                <h5>{numberBooksMatch} books found 👏</h5>
+                <div class="row">
+                    <template for:each={resultsBooks} for:item="book">
+                        <div key={book.id} class="col-6 col-md-3 col-lg-2 padding-book">
+                            <div class="card-custom">
+                                <img 
+                                    class="image-card" 
+                                    src={book.imageUrl}
+                                    data-url={book.urlAfiliatte} 
+                                    alt={book.title} 
+                                    onclick={handleClicLibro}
+                                >
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </section>
+        </template>
+
+        <section class="container">
+            <h5>Top developments books</h5>
+            <div class="row">
+                <template for:each={books} for:item="book">
+                    <div key={book.id} class="col-6 col-md-3 col-lg-2 padding-book">
+                        <div class="card-custom">
+                            <img 
+                                class="image-card" 
+                                src={book.imageUrl}
+                                data-url={book.urlAfiliatte} 
+                                alt={book.title} 
+                                onclick={handleClicLibro}
+                            >
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </section>
+
+    </template>
+    
+    <!-- // Home / Página 1 -->
+
+    <!-- Add a Book / Página 2 -->
+    <template if:true={mostrarPaginaAddABook}>
+        <my-add-a-book></my-add-a-book>
+    </template>
+    <!-- // Add a Book / Página 2 -->
+
+    <!-- Footer y disclaimer -->
+    <footer class="container text-center">
+        <h6>Made with <a class="lwc-footer" href="https://lwc.dev/">LWC</a></h6>
+        <span>By Andreas RO</span>
+    </footer>
+    <!-- // Footer y disclaimer -->
 </template>

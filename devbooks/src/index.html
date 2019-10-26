@@ -2,20 +2,25 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>My LWC App</title>
-        <style>
-            body {
-                font-family: Arial, Helvetica, sans-serif;
-            }
-            #main {
-                min-height: 65px;
-                padding-top: 50px;
-            }
-        </style>
+        <title>Devbooks | Best books for web development</title>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,500&display=swap" rel="stylesheet">
         <link rel="shortcut icon" href="/resources/favicon.ico" />
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <my-app></my-app>
+
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="/__/firebase/7.2.1/firebase-app.js"></script>
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="/__/firebase/7.2.1/firebase-analytics.js"></script>
+        <script src="/__/firebase/7.2.1/firebase-firestore.js"></script>
+        <script src="/__/firebase/7.2.1/firebase-functions.js"></script>
+
+        <!-- Initialize Firebase -->
+        <script src="/__/firebase/init.js"></script>
     </body>
 </html>
