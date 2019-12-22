@@ -347,3 +347,66 @@ template {
     display: none !important;
 }
 /*# sourceMappingURL=bootstrap-reboot.css.map */
+
+.install-pwa {
+    background-color: rgba(72, 121, 27, 0.61);
+    color: white;
+    text-align: center;
+    align-content: center;
+    padding: 8px 0px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+.p-install {
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+.button-install {
+    background-color: rgb(72, 121, 27);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin-left: 10px;
+}
+
+.dismiss-install {
+    position: absolute;
+    top: 10px;
+    width: 21px;
+    cursor: pointer;
+}
+
+.close.icon {
+    color: #000;
+    position: absolute;
+    margin-top: 0;
+    margin-left: 0;
+    width: 21px;
+    height: 21px;
+  }
+  
+  .close.icon:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 21px;
+    height: 2px;
+    background-color: white;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  
+  .close.icon:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 21px;
+    height: 2px;
+    background-color: white;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  
+  

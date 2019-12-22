@@ -1,0 +1,21 @@
+{
+    "short_name": "devbooks",
+    "name": "devbooks",
+    "icons": [
+      {
+        "src": "/resources/logo-devbooks-192-app.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/resources/logo-devbooks-512-app.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#000",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#666"
+  }
