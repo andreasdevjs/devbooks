@@ -36,6 +36,9 @@ export default class App extends LightningElementWithSLDS {
     @track
     numberBooksMatch = 0;
 
+    @track
+    noResults = false
+
    
 
     // Abre y cierra el menú
@@ -76,10 +79,13 @@ export default class App extends LightningElementWithSLDS {
             this.resultsBooks = matches;
             console.log(matches.length)
             if(resultsLength == 0) {
+                console.log('no hay resultados');
+                this.noResults = true;
                 this.searchResults = false;
                 this.numberBooksMatch = 0;
             }
             else if(resultsLength > 0) {
+                this.noResults = false;
                 this.searchResults = true;
                 this.numberBooksMatch = resultsLength;
             }
@@ -87,6 +93,7 @@ export default class App extends LightningElementWithSLDS {
             this.mostrarBotonEliminarTexto = false;
             this.searchResults = false;
             this.numberBooksMatch = 0;
+            this.noResults = false;
         }
     }
 

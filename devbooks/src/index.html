@@ -2,25 +2,52 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+        
         <title>Devbooks | Best books for web development</title>
+        <meta name="description" content="Discover the best Front-End and Back-End web development books in devbooks" />
+
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,500&display=swap" rel="stylesheet">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="apple-mobile-web-app-title" content="devbooks" />
+        <meta name="theme-color" content="#666" />
+
+        <link rel="apple-touch-icon" href="/resources/logo-512-devbooks.png" />
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,500&display=swap" rel="stylesheet" />
         <link rel="shortcut icon" href="/resources/favicon.ico" />
-        <link rel="stylesheet" href="styles.css">
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
+
+        <!-- App available alert -->
+        <section class="install-pwa" id="install-pwa">
+            <div id="dismiss-install" class="dismiss-install">
+                <div class="close icon"></div>
+            </div>
+            <p class="p-install">Devbooks is now installable!</p> 
+            <button class="button-install" id="butInstall">Install</button>
+        </section>
+
+        <!-- App -->
         <my-app></my-app>
 
-        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-        <script src="/__/firebase/7.2.1/firebase-app.js"></script>
+        <script src="./resources/assets/js/install.js"></script>
 
-        <!-- Add Firebase products that you want to use -->
-        <script src="/__/firebase/7.2.1/firebase-analytics.js"></script>
-        <script src="/__/firebase/7.2.1/firebase-firestore.js"></script>
-        <script src="/__/firebase/7.2.1/firebase-functions.js"></script>
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js')
+                    .then((reg) => {
+                        console.log('Service worker registered.', reg);
+                    });
+                });
+            }
+        </script>
 
-        <!-- Initialize Firebase -->
-        <script src="/__/firebase/init.js"></script>
+        <noscript>
+            <h2>This web requires javascript in order to work properly. Enable it to get a full experience.</h2>
+        </noscript>
+
     </body>
 </html>

@@ -121,7 +121,6 @@ footer {
     position: absolute;
     top: 42px;
     right: 45px;
-    background-color: rgba(59, 147, 224, 0.103);
     color: rgb(0, 0, 0);
     cursor: pointer;
 }
@@ -165,3 +164,21 @@ h2 {
     transform: rotate(45deg);
 }
 
+.logo-nombre {
+    text-align: center;
+}
+
+.logo-footer {
+    margin: 0;
+    margin-top: -20px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: -1px;
+    cursor: pointer;
+}
+
+.no-results {
+    margin-bottom: 30px;
+    color: #333333;
+}

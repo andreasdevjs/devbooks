@@ -44,6 +44,9 @@
                         <div key={book.id} class="col-6 col-md-3 col-lg-2 padding-book">
                             <div class="card-custom">
                                 <img 
+                                    height="100%"
+                                    width="100%"
+                                    loading="lazy"
                                     class="image-card" 
                                     src={book.imageUrl}
                                     data-url={book.urlAfiliatte} 
@@ -57,13 +60,22 @@
             </section>
         </template>
 
+        <template if:true={noResults}>
+            <section class="container">
+                <p class="no-results"> ☹️ There are no books for that search</p>
+            </section>
+        </template>
+
         <section class="container">
-            <h5>Top developments books</h5>
+            <h5>Top web developments books</h5>
             <div class="row">
                 <template for:each={books} for:item="book">
                     <div key={book.id} class="col-6 col-md-3 col-lg-2 padding-book">
                         <div class="card-custom">
                             <img 
+                                height="100%"
+                                width="100%"
+                                loading="lazy"
                                 class="image-card" 
                                 src={book.imageUrl}
                                 data-url={book.urlAfiliatte} 
@@ -77,7 +89,6 @@
         </section>
 
     </template>
-    
     <!-- // Home / Página 1 -->
 
     <!-- Add a Book / Página 2 -->
@@ -86,8 +97,17 @@
     </template>
     <!-- // Add a Book / Página 2 -->
 
+    <!-- Sección con logo y nombre web -->
+    <template if:false={mostrarPaginaAddABook}>
+        <section onclick={handleClicLogo} class="logo-nombre">
+            <img height="100px" src="../../../resources/logo-devbooks.svg" alt="">
+            <p class="logo-footer">devbooks</p>
+        </section>
+    </template>
+    
+
     <!-- Footer y disclaimer -->
-    <footer class="container text-center">
+    <footer class="container-fluid text-center">
         <h6>Made with <a class="lwc-footer" href="https://lwc.dev/">LWC</a></h6>
         <span>By Andreas RO</span>
     </footer>
